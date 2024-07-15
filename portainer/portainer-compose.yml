@@ -30,7 +30,7 @@ services:
     <<: *mayan-container
     # Disable ports if using Traefik.
     ports:
-      - "80:8000"
+      - "8888:8000"
 
   postgresql:
     command:
@@ -101,8 +101,8 @@ services:
     networks:
       - mayan
     # Enable to allow access to the administration interface.
-    # ports:
-    #   - "15672:15672"
+    ports:
+      - "15672:15672"
     restart: unless-stopped
     volumes:
       - ${MAYAN_RABBITMQ_VOLUME:-rabbitmq}:/var/lib/rabbitmq
