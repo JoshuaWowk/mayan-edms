@@ -55,7 +55,7 @@ services:
     networks:
       - mayan
     # Enable to allow external access to the database.
-    # ports:
+    ports:
       - "5442:5432"
     restart: unless-stopped
     volumes:
